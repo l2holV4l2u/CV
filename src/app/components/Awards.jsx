@@ -58,7 +58,7 @@ const awardsData = [
 },
 ];
 
-const Awards = () => {
+export default function Awards(){
   const [selectedId, setSelectedId] = useState(null);
   return (
     <section id="awards">
@@ -87,5 +87,3 @@ const Awards = () => {
     </section>    
   )
 };
-
-export default Awards;
