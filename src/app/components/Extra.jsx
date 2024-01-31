@@ -19,7 +19,7 @@ const HorizontalScrollCarousel = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-55%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-75%"]);
 
   return (
     <section ref={targetRef} id="extra" className="relative h-[300vh]">
@@ -48,11 +48,6 @@ const Card = ({ card }) => {
         }}
         className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
       ></div>
-      <div className="absolute inset-0 z-10 grid place-content-center">
-        <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
-          {card.title}
-        </p>
-      </div>
     </div>
   );
 };
@@ -61,38 +56,35 @@ export default Extra;
 
 const cards = [
   {
-    url: "/images/Profile.jpg",
-    title: "KVIS ISF Lead Organizer",
+    url: "/images/extra/isf.jpg",
     id: 1,
   },
   {
-    url: "/images/Profile.jpg",
-    title: "Title 2",
+    url: "/images/extra/mcisf.png",
     id: 2,
   },
   {
-    url: "/images/Profile.jpg",
-    title: "Title 3",
+    url: "/images/extra/aicamp.png",
     id: 3,
   },
   {
-    url: "/images/Profile.jpg",
-    title: "Title 4",
+    url: "/images/extra/aicode.jpg",
     id: 4,
   },
   {
-    url: "/images/Profile.jpg",
-    title: "Title 5",
+    url: "/images/extra/basketball.png",
     id: 5,
   },
   {
-    url: "/images/Profile.jpg",
-    title: "Title 6",
+    url: "/images/extra/football.png",
     id: 6,
   },
   {
-    url: "/images/Profile.jpg",
-    title: "Title 7",
+    url: "/images/extra/sportmedal.png",
     id: 7,
+  },
+  {
+    url: "/images/extra/mili.jpg",
+    id: 8,
   },
 ];

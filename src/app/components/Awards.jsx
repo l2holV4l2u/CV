@@ -2,6 +2,7 @@
 import React, { useState, useRef } from "react";
 import { motion} from "framer-motion";
 import "./styles.scss";
+import { Content } from "next/font/google";
 
 const awardsData = [
   {
@@ -58,31 +59,80 @@ const awardsData = [
 },
 ];
 
+function AwardContent({title, description}){
+  return (
+    <motion.div layout className="w-full h-full text-center p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+        <motion.h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</motion.h5>
+        <p className="font-normal text-gray-700 dark:text-gray-400">{description}</p>
+    </motion.div>
+  )
+}
+
+function ExpandedAward({children, onCollapse}){
+  return (
+    <div>
+      <motion.div onClick={onCollapse}>
+        {children}
+      </motion.div>
+    </div>
+  )
+}
+
+function CompactAward({children,onExpand,disabled}){
+  return (
+    <motion.div onClick={disabled? undefined : onExpand}>
+      {children}
+    </motion.div>
+  )
+}
+
+function AwardButton({title,description, onCollapse, onExpand, disabled}){
+  const [isExpand, setIsExpanded] = useState(false);
+
+  const collapseAward = () => {
+    setIsExpanded(false);
+    onCollapse();
+  }
+
+  const expandAward = () => {
+    setIsExpanded(true);
+    onExpand();
+  }
+
+  return (
+    <div>
+      {isExpand ? (
+        <ExpandedAward onCollapse={collapseAward}>
+          <AwardContent title={title} description={description} disabled={disabled}/>
+        </ExpandedAward>
+      ): (
+        <CompactAward onExpand={expandAward}>
+          <AwardContent title={title} description={description} disabled={disabled}/>
+        </CompactAward>
+      )}
+    </div>
+  )
+}
+
 export default function Awards(){
-  const [selectedId, setSelectedId] = useState(null);
+  const [selectedId, setSelectedId] = useState(undefined);
   return (
     <section id="awards">
         <h2 className="text-center text-4xl font-bold text-white mt-8 mb-8 md:mb-12">
             Awards
         </h2>
         <div className="layout-cards">
-        {awardsData.map((award) => (
-            <motion.div 
-            onClick={() => setSelectedId(award.id)}
-            className={selectedId === award.id ? 'opened-card' : 'card' }
-            key={award.id}
-            layout
-            >
-                <motion.div layout className="w-full h-full text-center p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-                    <motion.h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{award.title}</motion.h5>
-                    <p class="font-normal text-gray-700 dark:text-gray-400">{award.smdes}</p>
-                </motion.div>
-            </motion.div>
-        ))}
-        <motion.div 
-            className="dim-layer" 
-            animate={{ opacity: selectedId ? .3 : 0 }}
-        />
+          {awardsData.map((award) => (
+              <AwardButton
+                key={award.id}
+                title={award.title}
+                description={award.des}
+                disabled={selectedId !== award.id && selectedId !== undefined}
+                onClick={()=>setSelectedId(award.id)}
+                onExpand={() => setSelectedId(award.id)}
+                onCollapse={() => setSelectedId()}
+              />
+          ))}
         </div>
     </section>    
   )
