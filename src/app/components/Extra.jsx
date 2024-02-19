@@ -4,8 +4,8 @@ import { useRef } from "react";
 
 const Extra = () => {
   return (
-    <section>
-        <h2 className="text-center text-4xl font-bold text-white mt-16 mb-8 md:mb-12">
+    <section className="mt-28">
+        <h2 className="text-center text-4xl font-bold text-white">
             Extracurricular Activities
         </h2>        
         <HorizontalScrollCarousel />

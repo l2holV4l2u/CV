@@ -2,60 +2,60 @@
 import React, { useState, useRef } from "react";
 import { motion} from "framer-motion";
 import "./styles.scss";
-import { Content } from "next/font/google";
 
 const awardsData = [
   {
     id: 1,
     title: "The 17th and 18th Thailand Olympiad in Informatics",
     image: "/images/awards/toi.png",
-    smdes: "Bronze and silver medals",
-    des: "lorem"
+    des: "Bronze and Silver medals"
   },
   {
     id: 2,
-    title: "IChTo 2023",
+    title: "International Chemistry Tournament",
     image: "/images/awards/ichto.png",
-    smdes: "Team 3rd place award",
-    des: "lorem"
+    des: "The team 3rd place while reponsible for computational chemistry for team Thailand"
   },
   {
     id: 3,
-    title: "Kibo Robot Programming Challenge 2023",
+    title: "Kibo Robot Programming Challenge",
     image: "/images/awards/kibo.png",
-    smdes: "Top 25 team of Thailand while competing with undergraduate students",
-    des: "lorem"
+    des: "Top 25 team of Thailand in a robot programming challenge hosted by NASA"
   },
   {
     id: 4,
     title: "Thailand Young Scientist Competition 2023",
     image: "/images/awards/ysc.png",
-    smdes: "",
-    des: "lorem"
+    des: "Regional gold medal"
   },
   {
     id: 5,
-    title: "International Greenwich Olympiad 2023",
+    title: "International Greenwich Olympiad",
     image: "/images/awards/igo.png",
-    des: "lorem"
+    des: "Got my research reviewed and commented by professor from both Cambridge and Oxford university"
   },
   {
     id: 6,
     title: "Conrad Challenge 2023",
     image: "/images/awards/conrad.png",
-    des: "lorem"
+    des: "Got into semi-final round of this innovation competition"
 },
   {
     id: 7,
-    title: "ASEAN Data Science Explorers 2023",
+    title: "ASEAN DSE 2023",
     image: "/images/awards/aseandse.png",
-    des:"lorem"
+    des:"Participated in a data science competition focussed on UN-SDGs goals"
 },
   {
     id: 8,
     title: "Bangmod Hackathon 2023 & 2024",
     image: "/images/awards/bangmod.png",
-    des:"lorem awodnadafneiflhjsndfmao;ergnelhnslmefrgoepnj;fsdknehliurjoekflsdn ebjwhrijokldfsnhweurjiokfd"
+    des:"Got 5th and 3rd place in a national competitive programming competition"
+},
+  {
+    id: 9,
+    title: "The 7th KVIS invitational science fair",
+    des:"The best project and the best presentation award in the field of Mathematics"
 },
 ];
 
@@ -117,7 +117,7 @@ function AwardButton({title,description, onCollapse, onExpand, disabled}){
 export default function Awards(){
   const [selectedId, setSelectedId] = useState(undefined);
   return (
-    <section id="awards">
+    <section id="awards" className="mt-28">
         <h2 className="text-center text-4xl font-bold text-white mt-8 mb-8 md:mb-12">
             Awards
         </h2>

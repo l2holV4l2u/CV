@@ -20,11 +20,11 @@ const achievementsList = [
   },
   {
     metric: "Awards",
-    value: "8",
+    value: "9",
   },
   {
     metric: "Extracurricular activities",
-    value: "20",
+    value: "10",
   },
 ];
 

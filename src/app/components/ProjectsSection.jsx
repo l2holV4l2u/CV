@@ -8,7 +8,7 @@ const projectsData = [
   {
     id: 1,
     title: "Nonparametric Bayesian Online Change Point Detection Using Kernel Density Estimation With Nonparametric Hazard Function",
-    description: "This research is regarding enhancement of existed change point detection algorithm, making it more accurate while conserving its decent computational expenses",
+    description: "This research enhances an existing change point detection algorithm to improve accuracy while maintaining low computational expenses.",
     image: "/images/projects/1.png",
     tag: ["All", "Research"],
     previewUrl: "https://link.springer.com/article/10.1007/s11222-023-10375-4",
@@ -28,7 +28,7 @@ const projectsData = [
   {
     id: 3,
     title: "Efficiency of Time Series Clustering Method Based on Distribution of Difference Using Several Distances",
-    description: "This research explores diverse classification distance and discusses the compatibility with diverse time series data", 
+    description: "This research explores diverse classification distances and discusses their compatibility with various types of time series data.", 
     image: "/images/projects/3.png",
     tag: ["All", "Research"],
     previewUrl: "https://ieeexplore.ieee.org/document/9836279",
@@ -53,8 +53,11 @@ const ProjectsSection = () => {
 
   return (
     <section id="research">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8">
         My Research
+      </h2>
+      <h2 className="text-center text-1xl text-white mb-8 md:mb-12">
+        (click on the 1st and 3rd research to see an online publication)
       </h2>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
         {filteredProjects.map((project, index) => (
