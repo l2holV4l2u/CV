@@ -8,7 +8,7 @@ const projectsData = [
   {
     id: 1,
     title: "Nonparametric Bayesian Online Change Point Detection Using Kernel Density Estimation With Nonparametric Hazard Function",
-    description: "This research enhances an existing change point detection algorithm to improve accuracy while maintaining low computational expenses.",
+    description: "This research enhances an existing change point detection algorithm to improve accuracy while maintaining low computational expenses",
     image: "/images/projects/1.png",
     tag: ["All", "Research"],
     previewUrl: "https://link.springer.com/article/10.1007/s11222-023-10375-4",
@@ -28,7 +28,7 @@ const projectsData = [
   {
     id: 3,
     title: "Efficiency of Time Series Clustering Method Based on Distribution of Difference Using Several Distances",
-    description: "This research explores diverse classification distances and discusses their compatibility with various types of time series data.", 
+    description: "This research explores diverse classification distances and discusses their compatibility with various types of time series data", 
     image: "/images/projects/3.png",
     tag: ["All", "Research"],
     previewUrl: "https://ieeexplore.ieee.org/document/9836279",
